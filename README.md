@@ -8,4 +8,4 @@ Before you get started you'll need to edit the controller credentials.
 
 ## DeviceListToExcel.py
 
-This script will get a list of network devices from DNAC and present them in an Excel spreadsheet.
+This script will get a list of network devices from Cisco DNA Center and present them in an Excel spreadsheet.
