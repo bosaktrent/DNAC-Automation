@@ -18,5 +18,5 @@ This script will get a list of network devices from Cisco DNA Center and present
 [requests_link]: https://2.python-requests.org/en/master/
 [tablib_link]: http://docs.python-tablib.org/en/master/
 
-`python3 DeviceListToExcel.py`
+	python3 DeviceListToExcel.py
 	
