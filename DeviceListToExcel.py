@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""getToken.py: Gets an authentication token from DNAC
+"""DeviceListToExcel.py: Gets a list of network devices and presents them in an Excel spreadsheet.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -26,12 +26,11 @@ import json
 import tablib
 
 def get_token():
-    ip = "sandboxdnac.cisco.com"            # DNA Center cluser ip address
     response = requests.post(
        "https://{}/dna/system/api/v1/auth/token".format(ip),
        auth=HTTPBasicAuth(
-           username="devnetuser",           # DNA Center username
-           password="Cisco123!"             # DNA Center password
+           username=username,           # DNA Center username
+           password=password            # DNA Center password
        ),
       headers={'content-type': 'application/json'},
       verify=False,
@@ -40,7 +39,6 @@ def get_token():
     return token
 
 def get_device_list():
-    ip = "sandboxdnac.cisco.com"            # DNA Center cluser ip address
     response = requests.get(
         "https://{}/dna/intent/api/v1/network-device/".format(ip),
         headers={
@@ -58,4 +56,7 @@ def main():
     open('Device_List.xls', 'wb').write(data.xls)
 
 if __name__ == '__main__':
+    ip = "sandboxdnac.cisco.com"            # DNA Center cluser ip address
+    username="devnetuser"                   # DNA Center username
+    password="Cisco123!"                    # DNA Center password
     main()

@@ -2,9 +2,13 @@
 
 This repository contains some simple scripts to get started with Cisco DNA Center API.
 
-It also contains some scripts for simple use cases.
+To get started you'll need to `install` the required modules and edit the default controller credentials shown below. 
 
-Before you get started you'll need to edit the controller credentials.
+Found in `if __name__ == '__main__':`
+
+    ip = "sandboxdnac.cisco.com"            # DNA Center cluser ip address
+    username="devnetuser"                   # DNA Center username
+    password="Cisco123!"                    # DNA Center password
 
 ## DeviceListToExcel.py
 
