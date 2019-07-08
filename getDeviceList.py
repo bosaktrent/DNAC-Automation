@@ -1,3 +1,7 @@
+"""getDeviceList.py: Returns a list of devices on DNAC"""
+__author__ = "Trent Bosak"
+__email__ = "tbosak@cisco.com"
+
 from requests.auth import HTTPBasicAuth
 import requests
 import json
@@ -6,8 +10,9 @@ import getToken
 import tablib
 
 def get_device_list():
+    ip = "sandboxdnac.cisco.com"            # DNA Center cluser ip address
     response = requests.get(
-        "https://sandboxdnac.cisco.com/dna/intent/api/v1/network-device/",
+        "https://{}/dna/intent/api/v1/network-device/".format(ip),
         headers={
             "X-Auth-Token": getToken.get_token(),
             "Content-type": "application/json",
@@ -15,9 +20,3 @@ def get_device_list():
         verify=False
     )
     return response.json()["response"]
-
-deviceList = json.dumps(get_device_list())
-data = tablib.Dataset()
-data.json = deviceList
-
-open('output.xls', 'wb').write(data.xls)
