@@ -4,7 +4,7 @@ This repository contains some simple scripts to get started with Cisco DNA Cente
 
 To get started you'll need to `install` the required modules and edit the default controller credentials shown below. 
 
-Found in `if __name__ == '__main__':`
+*The credentials can be found in `if __name__ == '__main__':`*
 
     ip = "sandboxdnac.cisco.com"            # DNA Center cluser ip address
     username="devnetuser"                   # DNA Center username
@@ -12,7 +12,7 @@ Found in `if __name__ == '__main__':`
 
 ## DeviceListToExcel.py
 
-This script will get a list of network devices from Cisco DNA Center and present them in an Excel spreadsheet.
+This script gets a list of network devices from Cisco DNA Center and presents them in an Excel spreadsheet. The default filename is `Device_List.xls` and will be saved in the same location as `DeviceListToExcel.py`.
 
 ### Requirements
 * Python 3
@@ -22,5 +22,5 @@ This script will get a list of network devices from Cisco DNA Center and present
 [requests_link]: https://2.python-requests.org/en/master/
 [tablib_link]: http://docs.python-tablib.org/en/master/
 
-	python3 DeviceListToExcel.py
+To run this script, run the command: `python3 DeviceListToExcel.py`
 	

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """DeviceListToExcel.py: Gets a list of network devices and presents them in an Excel spreadsheet.
@@ -19,6 +19,9 @@ IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
 or implied.
 
 """
+__author__ = "Trent Bosak <tbosak@cisco.com>"
+__copyright__ = "Copyright (c) 2019 Cisco and/or its affiliates."
+__license__ = "Cisco Sample Code License, Version 1.1"
 
 from requests.auth import HTTPBasicAuth
 import requests
@@ -53,10 +56,22 @@ def main():
     deviceList = json.dumps(get_device_list())
     data = tablib.Dataset()
     data.json = deviceList
-    open('Device_List.xls', 'wb').write(data.xls)
+    open('Device_List.xls', 'wb').write(data.xls)               # Default filename "Device_List.xls"
+
+def displayDoc():
+    indent = 4
+    print(
+        __doc__,
+        "Author:",
+        " " * indent + __author__,
+        __copyright__,
+        "Licensed Under: " + __license__,
+        sep="\n"
+        )
 
 if __name__ == '__main__':
     ip = "sandboxdnac.cisco.com"            # DNA Center cluser ip address
     username="devnetuser"                   # DNA Center username
     password="Cisco123!"                    # DNA Center password
     main()
+    displayDoc()              
